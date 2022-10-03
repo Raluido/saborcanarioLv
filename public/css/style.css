@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+header .nav-item {
+    font-size: 1.4rem;
+}
+header .login {
+    height: 5vh;
+    font-size: 1rem;
+    background-color: rgba(88, 88, 88, 0.178);
+}
+header .loginText {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 5vh;
+}
+.main-bg {
+    height: 100vh;
+    background: url("/css/images/hotel-entrance.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.mainMenu {
+    margin-right: 1vh;
+    margin-top: 5vh;
+}
+.logo {
+    margin-right: 80vh;
+}
+h1 {
+    font-size: 3rem;
+}
+.stars {
+    font-size: 1.5rem;
+}
+.rangeInput label, .guestInput label {
+    font-size: 1.3rem;
+}
+.rangeInput input {
+    width: 27vh;
+    height: 5vh;
+    font-size: 1rem;
+}
+.guestInput select {
+    width: 10vh;
+    height: 5vh;
+    margin: auto;
+    display: block;
+    font-size: 1rem;
+}
+select.form-control {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.info p {
+    font-size: 1.2rem;
+}
+footer {
+    font-size: 1.1rem;
+}
+.pay div {
+    border: 1px solid grey;
+    height: 6vh;
+}
+.imagesCarousel {
+    height: 50vh;
+    width: auto;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+   .logo, .mainMenu {
+        display:none;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+  }
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+
+  }
+
+
+/*fin del blade home*/
+
+.second-bg {
+    height: 50vh;
+    background: url("/css/images/cosas.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.availableTitle {
+    margin-bottom: 30vh;
+}
+h2 {
+    font-size: 3rem;
+}
+
+.availableRooms {
+    border: 1px solid lightgrey;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.roomsResults {
+    width: 48%;
+    margin-left: 35vh;
+}
+.room p {
+    font-size: 1.2rem;
+}
+
+/*fin del segundo blade*/
+
+.third-bg {
+    height: 50vh;
+    background: url("/css/images/laorotava.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.roomChoose {
+    margin-bottom: 30vh;
+}
+
+/*fin del tercer blade*/
+
+/*blade login*/
+
+.loginBlade {
+    width: 40vh;
+    height: 50vh;
+    border: 1px solid grey;
+}
+.loginBlade {
+    font-size: 1.2rem;
+}
+
