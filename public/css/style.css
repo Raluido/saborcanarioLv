@@ -1,113 +1,196 @@
+.mainTitle {
+    margin-top: 20%;
+}
+
+.mainTitle h1 {
+    font-family: "Uchen", serif;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem !important;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
 body {
     margin: 0;
     padding: 0;
 }
+
 header .nav-item {
     font-size: 1.4rem;
 }
-header .login {
+
+header {
     height: 5vh;
     font-size: 1rem;
-    background-color: rgba(88, 88, 88, 0.178);
+    background-color: rgba(88, 88, 88, 0.3);
 }
-header .loginText {
+
+header {
     text-align: center;
     vertical-align: middle;
     line-height: 5vh;
 }
+
 .main-bg {
     height: 100vh;
-    background: url("/css/images/hotel-entrance.jpg") no-repeat center center;
+    background: url("/storage/media/hotel-entrance.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
+
 .mainMenu {
     margin-right: 1vh;
     margin-top: 5vh;
 }
-.logo {
-    margin-right: 80vh;
+
+header .buttonLanguage {
+    height: 5vh;
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
 }
-h1 {
-    font-size: 3rem;
+
+.hideContent2 {
+    overflow: hidden;
+    height: 35vh;
 }
-.stars {
+
+.showContent {
+    height: auto;
+}
+
+.textOverImg {
+    position: relative;
+    overflow: hidden;
+}
+
+.textOverImg img {
+    height: 100%;
+    transition: transform 1s;
+}
+
+.textOverImg .text {
+    position: absolute;
     font-size: 1.5rem;
+    opacity: 0;
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    right: auto;
+    color: #fff;
 }
-.rangeInput label, .guestInput label {
-    font-size: 1.3rem;
+
+.textOverImg:hover .text {
+    opacity: 0.8;
 }
-.rangeInput input {
-    width: 27vh;
-    height: 5vh;
-    font-size: 1rem;
+
+.textOverImg:hover img {
+    -ms-transform: scale(1.05);
+    /* IE 9 */
+    -webkit-transform: scale(1.05);
+    /* Safari 3-8 */
+    transform: scale(1.05);
 }
-.guestInput select {
-    width: 10vh;
-    height: 5vh;
-    margin: auto;
-    display: block;
-    font-size: 1rem;
+
+.cover {
+    width: 100%;
+    object-fit: cover;
 }
+
 select.form-control {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
 }
+
 .info p {
     font-size: 1.2rem;
 }
+
 footer {
     font-size: 1.1rem;
 }
+
 .pay div {
     border: 1px solid grey;
     height: 6vh;
 }
+
 .imagesCarousel {
     height: 50vh;
     width: auto;
 }
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-   .logo, .mainMenu {
-        display:none;
+    h2 {
+        font-size: 1.8rem !important;
     }
-    h1 {
-        font-size: 2rem;
+
+    p {
+        font-size: 1rem;
     }
-  }
 
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-  @media only screen and (min-width: 600px) {
-
-    h1 {
-        font-size: 2rem;
+    .logo,
+    .mainMenu {
+        display: none;
     }
-  }
 
-  /* Medium devices (landscape tablets, 768px and up) */
-  @media only screen and (min-width: 768px) {
+    .main-bg {
+        height: 100vh;
+        background: url("/storage/media/pasillo.jpg") no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
 
-  }
+    .containerForm {
+        width: 90vw !important;
+        margin-top: 5% !important;
+    }
 
-  /* Large devices (laptops/desktops, 992px and up) */
-  @media only screen and (min-width: 992px) {
-  }
+    .containerForm button {
+        margin-top: 30px !important;
+        margin: auto;
+    }
 
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
-  @media only screen and (min-width: 1200px) {
+    .mainTitle {
+        margin-top: 5% !important;
+        width: 70vw;
+        margin: auto;
+    }
+}
 
-  }
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+}
 
 
 /*fin del blade home*/
 
 .second-bg {
     height: 50vh;
-    background: url("/css/images/cosas.jpg") no-repeat center center;
+    background: url("/storage/media/cosas.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -117,6 +200,7 @@ footer {
 .availableTitle {
     margin-bottom: 30vh;
 }
+
 h2 {
     font-size: 3rem;
 }
@@ -126,10 +210,12 @@ h2 {
     font-size: 1.3rem;
     text-align: center;
 }
+
 .roomsResults {
     width: 48%;
     margin-left: 35vh;
 }
+
 .room p {
     font-size: 1.2rem;
 }
@@ -144,6 +230,7 @@ h2 {
     -o-background-size: cover;
     background-size: cover;
 }
+
 .roomChoose {
     margin-bottom: 30vh;
 }
@@ -157,7 +244,7 @@ h2 {
     height: 50vh;
     border: 1px solid grey;
 }
+
 .loginBlade {
     font-size: 1.2rem;
 }
-

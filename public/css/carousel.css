@@ -2,11 +2,8 @@
     display: none;
 }
 .leftlst {
-    position: absolute;
-    margin: auto;
-    top: 0;
+    position:absolute;
     left: 15px;
-    bottom: 0;
     width: 40px;
     border: none;
     z-index: 100;
@@ -14,14 +11,11 @@
     height: 100px;
     outline: none;
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .11);
-    margin-top: 200px;
+    margin-top: 130px;
 }
 .rightlst {
-    position: absolute;
-    margin: auto;
-    top: 0;
+    position:absolute;
     right: 15px;
-    bottom: 0;
     width: 40px;
     border: none;
     z-index: 100;
@@ -29,11 +23,11 @@
     height: 100px;
     outline: none;
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .11);
-    margin-top: 200px;
+    margin-top: 130px;
 }
 .btn-default i {
     font-size: 16px;
-    color: #000;
+    color: greenyellow;
 }
 .rescarousel {
     float: left;
