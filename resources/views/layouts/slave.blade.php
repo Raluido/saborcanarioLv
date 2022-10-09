@@ -15,52 +15,46 @@
     <header>
         <div class="d-flex flex-column">
             <div class="d-flex justify-content-end login">
-                <div class="text-white innerLogin">
+                <div class="text-white">
                     @if (Auth::user())
-                        <p>Hola {{ Auth::user()->email }}</p>
+                    <p>Hola {{ Auth::user()->email }}</p>
                     @endif
                     @if (!Auth::user())
-                        <p>No estas logueado</p>
+                    <p>No estas logueado</p>
                     @endif
                 </div>
-                <div class="d-flex justify-content-end">
+                <div class="d-flex justify-content-end ms-3">
                     <div class="text-center">
                         @if (Auth::user())
-                            <a class="nav-link text-white"
-                                href="{{ url('/logout') }}">{{ Lang::get('login.logout') }}</a>
+                        <a class="nav-link text-white" href="{{ url('/logout') }}">{{ Lang::get('login.logout') }}</a>
                         @elseif (!Auth::user())
-                            <a class="nav-link text-white"
-                                href="{{ url('/login') }}">{{ Lang::get('login.login') }}</a>
+                        <a class="nav-link text-white" href="{{ url('/login') }}">{{ Lang::get('login.login') }}</a>
                         @endif
                     </div>
-                    <div class="text-center">
+                    <div class="text-center ms-3 me-3">
                         @if (!Auth::user())
-                            <a class="nav-link text-white"
-                                href="{{ url('/register') }}">{{ Lang::get('login.register') }}</a>
+                        <a class="nav-link text-white" href="{{ url('/register') }}">{{ Lang::get('login.register') }}</a>
                         @elseif (Auth::user() && !Auth::user()->user_name == '')
-                            <a class="nav-link text-white"
-                                href="{{ url('/formuserdata') }}">{{ Lang::get('login.editregister') }}</a>
+                        <a class="nav-link text-white" href="{{ url('/formuserdata') }}">{{ Lang::get('login.editregister') }}</a>
                         @elseif (Auth::user() && Auth::user()->user_surname == '')
-                            <a class="nav-link text-white"
-                                href="{{ url('/formuserdata') }}">{{ Lang::get('login.fillregisterout') }}</a>
+                        <a class="nav-link text-white" href="{{ url('/formuserdata') }}">{{ Lang::get('login.fillregisterout') }}</a>
                         @endif
                     </div>
                 </div>
             </div>
             <div class="d-flex justify-content-around">
                 <div class="logo">
-                    <a href="{{ url('/') }}"><img src="{{ Storage::url('/media/logotransp.jpg') }}" width="120"
-                            height="120"></a>
+                    <a href="{{ url('/') }}"><img src="{{ Storage::url('/media/logotransp.jpg') }}" width="120" height="120"></a>
                 </div>
                 <div class="mainMenu">
-                    <ul class="nav">
+                    <!-- <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link text-white mr-3" href="#">Hotel</a>
+                            <a class="nav-link text-dark mr-3" href="#">Hotel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Restaurante</a>
+                            <a class="nav-link text-dark" href="#">Restaurante</a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
         </div>
@@ -86,7 +80,6 @@
                 'onfailure': onFailure
             });
         }
-
     </script>
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     <script src="{{ asset('js/app.js') }}"></script>

@@ -9,12 +9,13 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Config;
 use App\Mail\NewUserNotification;
-use Socialite;
+use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Facades\Log;
 
 
 class SocialLoginController extends Controller
 {
-    public function registerGoogle(Request $request)
+    public function registerGoogle()
     {
         $socialUser = Socialite::driver('google')->user();
 
@@ -50,18 +51,18 @@ class SocialLoginController extends Controller
         return Socialite::driver('google')->redirect();
     }
 
-    public function generateUserCode(){
+    public function generateUserCode()
+    {
         $prefix = config("ggconfig.prefix");
         $noCode = true;
-        while($noCode){
+        while ($noCode) {
             $number = rand(100, 999);
             $last = $this->getLetters();
-            $code = $prefix.$number.$last;
+            $code = $prefix . $number . $last;
             $user = User::where('user_code', $code)->get();
-            if($user->isEmpty()){
+            if ($user->isEmpty()) {
                 $noCode = false;
-            }
-            else{
+            } else {
 
                 $noCode = true;
             }
@@ -69,12 +70,12 @@ class SocialLoginController extends Controller
         return $code;
     }
 
-    public function getLetters(){
+    public function getLetters()
+    {
         $seed = str_split('ABCDEFGHJKLMNPQRSTUVWXYZ');
         shuffle($seed);
         $rand = '';
         foreach (array_rand($seed, 3) as $k) $rand .= $seed[$k];
         return $rand;
     }
-
 }
