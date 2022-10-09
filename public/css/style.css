@@ -15,11 +15,6 @@ p {
     font-size: 1.1rem;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
 header .nav-item {
     font-size: 1.4rem;
 }
@@ -28,9 +23,6 @@ header {
     height: 5vh;
     font-size: 1rem;
     background-color: rgba(88, 88, 88, 0.3);
-}
-
-header {
     text-align: center;
     vertical-align: middle;
     line-height: 5vh;
@@ -43,11 +35,6 @@ header {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
-
-.mainMenu {
-    margin-right: 1vh;
-    margin-top: 5vh;
 }
 
 header .buttonLanguage {
