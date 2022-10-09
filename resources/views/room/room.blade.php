@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('mainDiv') {{-- style="border: 1px solid black" --}}
+@section('mainDiv')
 
 <body>
     <div class="container-fluid second-bg p-0">
 @endsection
 @section('content')
-        <div class="w-100  mt-2 text-center text-white availableTitle">
+        <div class="w-100 mt-2 text-center text-white availableTitle">
             <h2>Habitaciones disponibles</h2>
         </div>
         <div class="d-flex flex-column roomsResults">
