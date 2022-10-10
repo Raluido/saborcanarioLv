@@ -15,10 +15,6 @@ p {
     font-size: 1.1rem;
 }
 
-nav .nav-item {
-    font-size: 1.4rem;
-}
-
 nav {
     height: 5vh;
     font-size: 1rem;
@@ -117,6 +113,13 @@ footer {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    nav {
+        height: 7vh;
+    }
+
+    nav div div {
+        background-color: transparent;
+    }
     h2 {
         font-size: 1.8rem !important;
     }

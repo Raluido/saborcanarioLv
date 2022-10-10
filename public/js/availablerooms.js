@@ -3,10 +3,9 @@ $(document).ready(function () {
     var day =
         today.getFullYear() +
         "/" +
-        (today.getMonth()+1) +
+        (today.getMonth() + 1) +
         "/" +
         today.getDate();
-        console.log(day);
     $('input[name="daterange"]').daterangepicker({
         opens: "left",
         drops: "left",

@@ -23,11 +23,12 @@
     <header>
         <div class="">
             <div class="">
-                <nav class="navbar navbar-expand-lg">
+                <nav class="navbar navbar-expand-sm">
                     <div class="container-fluid">
-                        <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <div class="collapse navbar-collapse justify-content-around" id="navbarNavDropdown">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
                                     <button class="buttonLanguage" onclick="toggleLanguage('Español')"><a class="text-decoration-none text-white" href="#">Español</a></button>
@@ -35,94 +36,52 @@
                                 <li class="nav-item">
                                     <button class="buttonLanguage" onclick="toggleLanguage('English')"><a class="text-decoration-none text-white" href="#">English</a></button>
                                 </li>
-                                <li class="nav-item">
+                            </ul>
+                            <ul class="navbar-nav">
+                                <li class="nav-item me-3">
                                     <a class="text-decoration-none text-white" id="transContact" href="mailto:info@hotelruralorotava.es"><i class="far fa-envelope-open me-1"></i>Contacta</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item me-3">
                                     <a class="text-decoration-none text-white" id="transFind" href="https://goo.gl/maps/i3DLVeCKVow1m9SN9" target="_blank"><i class="far fa-map me-1"></i>Como
                                         encontrarnos</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="text-decoration-none text-white" id="transPhone" href="tel:+34922322793"><i class="fas fa-mobile-alt me-1"></i>Teléfono</a>
                                 </li>
+                            </ul>
+                            <ul class="navbar-nav">
+                                @if (Auth::user())
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        @if (Auth::user())
-                                        <p style="display:block">Hola {{ Auth::user()->email }}</p>
-                                        @elseif (!Auth::user())
-                                        <p><a class="nav-link" href="{{ url('/login') }}">{{ Lang::get('login.login') }}</a></p>
-                                        @endif
+                                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hola {{ Auth::user()->email }}
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <li>@if (Auth::user())
-                                            <p><a class="nav-link" href="{{ url('/logout') }}">{{ Lang::get('login.logout') }}</a></p>
-                                            @endif
-                                        </li>
-                                        <li>@if (!Auth::user())
-                                            <p><a class="nav-link" href="{{ url('/register') }}">{{ Lang::get('login.register') }}</a></p>
-                                            @elseif (Auth::user() && !Auth::user()->user_name == '')
-                                            <p><a class="nav-link" href="{{ url('/formuserdata') }}">{{ Lang::get('login.editregister') }}</a></p>
+                                        <li>
+                                            @if (Auth::user() && !Auth::user()->user_name == '')
+                                            <a class="dropdown-item" href="{{ url('/formuserdata') }}">{{ Lang::get('login.editregister') }}</a>
                                             @elseif (Auth::user() && Auth::user()->user_surname == '')
-                                            <p><a class="nav-link" href="{{ url('/formuserdata') }}">{{ Lang::get('login.fillregisterout') }}</a></p>
+                                            <a class="dropdown-item" href="{{ url('/formuserdata') }}">{{ Lang::get('login.fillregisterout') }}</a>
                                             @endif
+                                            <a class="dropdown-item" href="{{ url('/logout') }}">{{ Lang::get('login.logout') }}</a>
                                         </li>
                                     </ul>
                                 </li>
+                                @elseif (!Auth::user())
+                                <li>
+                                    <a class="nav-link text-white" href="{{ url('/login') }}">{{ Lang::get('login.login') }}</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-white" href="{{ url('/register') }}">{{ Lang::get('login.register') }}</a>
+                                </li>
+                                @endif
                             </ul>
                         </div>
                     </div>
                 </nav>
-
-
-                <!-- <div class="d-flex justify-content-between">
-                    <div class="d-flex ms-3">
-                        <button class="buttonLanguage" onclick="toggleLanguage('Español')"><a class="text-decoration-none text-white" href="#">Español</a></button>
-                        <button class="buttonLanguage" onclick="toggleLanguage('English')"><a class="text-decoration-none text-white" href="#">English</a></button>
-                    </div>
-                    <div class="d-none d-md-flex">
-                        <div class="me-3">
-                            <a class="text-decoration-none text-white" id="transContact" href="mailto:info@hotelruralorotava.es"><i class="far fa-envelope-open me-1"></i>Contacta</a>
-                        </div>
-                        <div class="me-3">
-                            <a class="text-decoration-none text-white" id="transFind" href="https://goo.gl/maps/i3DLVeCKVow1m9SN9" target="_blank"><i class="far fa-map me-1"></i>Como
-                                encontrarnos</a>
-                        </div>
-                        <div class="">
-                            <a class="text-decoration-none text-white" id="transPhone" href="tel:+34922322793"><i class="fas fa-mobile-alt me-1"></i>Teléfono</a>
-                        </div>
-                    </div>
-                    <div class="d-flex text-white">
-                        <div class="">
-                            @if (Auth::user())
-                            <p style="display:block">Hola {{ Auth::user()->email }}</p>
-                            @elseif (!Auth::user())
-                            <p><a class="nav-link" href="{{ url('/login') }}">{{ Lang::get('login.login') }}</a></p>
-                            @endif
-                        </div>
-                        <div class="d-flex ms-3">
-                            <div class="">
-                                @if (Auth::user())
-                                <p><a class="nav-link" href="{{ url('/logout') }}">{{ Lang::get('login.logout') }}</a></p>
-                                @endif
-                            </div>
-                            <div class="ms-3 me-3">
-                                @if (!Auth::user())
-                                <p><a class="nav-link" href="{{ url('/register') }}">{{ Lang::get('login.register') }}</a></p>
-                                @elseif (Auth::user() && !Auth::user()->user_name == '')
-                                <p><a class="nav-link" href="{{ url('/formuserdata') }}">{{ Lang::get('login.editregister') }}</a></p>
-                                @elseif (Auth::user() && Auth::user()->user_surname == '')
-                                <p><a class="nav-link" href="{{ url('/formuserdata') }}">{{ Lang::get('login.fillregisterout') }}</a></p>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
                 <div class="d-none d-xl-flex d-lg-flex d-md-none d-sm-none justify-content-sm-around justify-content-md-around justify-content-lg-around">
                     <div class="">
                         <a href="{{ url('/') }}"><img src="{{ Storage::url('/media/logotransp.jpg') }}" width="160" height="160"></a>
                     </div>
-                    <div class="d-flex pt-5 w-25">
+                    <div class="d-flex pt-5 w-25 fs-4">
                         <ul class="nav">
                             <li class="nav-item">
                                 <a class="nav-link text-white mr-3" href="#">Hotel</a>
