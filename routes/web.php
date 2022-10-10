@@ -24,7 +24,7 @@ use App\Http\Controllers\SocialLoginController;
 Route::get('/', [GeneralController::class, 'showHome']);
 Route::get('/register', [UserController::class, 'showRegister']);
 Route::get('/showgoogleform', [SocialLoginController::class, 'showGoogleForm']);
-Route::get('/auth/google', [SocialLoginController::class, 'registerGoogle']);
+Route::get('/google/auth', [SocialLoginController::class, 'registerGoogle']);
 Route::get('/testemail', [UserController::class, 'testEmail']);
 Route::get('/verificateemail/{code}', [UserController::class, 'verifiedEmail']);
 Route::get('/login', [UserController::class, 'showLogin']);

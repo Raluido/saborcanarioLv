@@ -15,11 +15,11 @@ p {
     font-size: 1.1rem;
 }
 
-header .nav-item {
+nav .nav-item {
     font-size: 1.4rem;
 }
 
-header {
+nav {
     height: 5vh;
     font-size: 1rem;
     background-color: rgba(88, 88, 88, 0.3);
@@ -37,7 +37,7 @@ header {
     background-size: cover;
 }
 
-header .buttonLanguage {
+nav .buttonLanguage {
     height: 5vh;
     font-size: 1rem;
     background-color: transparent;
