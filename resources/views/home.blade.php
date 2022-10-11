@@ -5,7 +5,7 @@
     <div class="container-fluid main-bg p-0">
         @endsection
         @section('content')
-        <div class="text-center text-white mainTitle">
+        <div class="text-center text-white mt-5 mainTitle">
             <h1>HOTEL RURAL OROTAVA</h1>
             <div class="stars text-center">
             </div>
@@ -42,7 +42,7 @@
             </form>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid section-div p-0">
         <section class="">
             <div class="" style="margin-top: 10vh;">
                 <div class="d-flex justify-content-center">
@@ -66,7 +66,7 @@
             </div>
             <div class="">
                 <div class="row load-hidden">
-                    <div class="col-lg-12 p-0">
+                    <div class="col-lg-12">
                         <div class="rescarousel" data-items="2,4,5,6" data-slide="1">
                             <div class="rescarousel-inner">
                                 <div class="item">
@@ -177,7 +177,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row g-0 col-12 col-xl-12 col-xl-12 load-hidden ">
+            <div class="row col-12 col-xl-12 col-xl-12 g-0 load-hidden">
                 <div class="textOverImg col-12 col-xl-6 col-lg-6">
                     <img src="{{ Storage::url('/media/hab_4.jpg') }}" class="img-fluid cover" alt="habitación doble">
                 </div>
@@ -206,7 +206,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row g-0">
+            <div class="row">
                 <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
                     <img src="{{ Storage::url('/media/escalera.jpg') }}" class="img-fluid cover" alt="habitación doble">
                 </div>
@@ -218,7 +218,7 @@
                 </div>
             </div>
         </section>
-        <section class="w-100 mx-auto text-center text-primary load-hidden" style="margin-top: 15vh;">
+        <section class="mx-auto text-center text-primary load-hidden" style="margin-top: 15vh;">
             <div class="d-flex justify-content-center">
                 <div class="d-inline-block text-primary">
                     <h2 class="load-hidden " id="transHowToGet">Cómo llegar</h2>
@@ -231,7 +231,7 @@
                 </div>
             </div>
         </section>
-        <section class="pt-4 pb-4 d-flex align-items-center justify-content-center text-white text-center border load-hidden" style="margin-top: 10vh; background-color:coral">
+        <section class="py-4 d-flex align-items-center justify-content-center text-white text-center border load-hidden" style="margin-top: 10vh; background-color:coral">
             <div class="">
                 <h3>Our stay was amazing. We will be returning again.</h3>
                 <div class="d-flex justify-content-center mt-4">

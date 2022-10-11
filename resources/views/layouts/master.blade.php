@@ -21,7 +21,7 @@
 <body>
     @yield('mainDiv')
     <header>
-        <nav class="navbar navbar-expand-lg pb-0">
+        <nav class="navbar navbar-expand-lg py-0">
             <div class="container-fluid">
                 <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

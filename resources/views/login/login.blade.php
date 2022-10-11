@@ -1,7 +1,7 @@
 @extends('layouts.slave')
 @section('content')
 
-<div class="container-fluid p-0 w-100 d-flex justify-content-center">
+<div class="container w-100 d-flex justify-content-center">
     @if (session('error'))
     <h1>{{ Lang::get('login.' . session('error')) }}</h1>
     @endif

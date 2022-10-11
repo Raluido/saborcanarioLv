@@ -1,10 +1,10 @@
-.mainTitle {
-    margin-top: 20%;
-}
-
 .mainTitle h1 {
     font-family: "Uchen", serif;
     font-size: 2.5rem;
+}
+
+.section-div {
+    overflow: hidden!important;
 }
 
 h2 {
@@ -113,7 +113,7 @@ footer {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     nav {
-        padding-top: 5%!important;
+        padding-top: 5% !important;
     }
 
     nav div div {
@@ -180,7 +180,7 @@ footer {
 
 .second-bg {
     height: 50vh;
-    background: url("/storage/media/cosas.jpg") no-repeat center center;
+    background: url("/storage/media/cocina.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -201,10 +201,10 @@ h2 {
     text-align: center;
 }
 
-.roomsResults {
+/* .roomsResults {
     width: 48%;
     margin-left: 35vh;
-}
+} */
 
 .room p {
     font-size: 1.2rem;
@@ -214,7 +214,7 @@ h2 {
 
 .third-bg {
     height: 50vh;
-    background: url("/css/images/laorotava.jpg") no-repeat center center;
+    background: url("/storage/media/laorotava.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
