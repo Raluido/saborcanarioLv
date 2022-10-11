@@ -27,7 +27,7 @@
         <div class="d-flex justify-content-center">
             <div class="my-5 room">
                 @if ($result1 == 1)
-                <img class="" src="{{ Storage::url('/media/' . 'Suit1.jpg') }}" width="800" height="auto">
+                <img class="" src="{{ Storage::url('/media/suit1.jpg') }}" width="800" height="auto">
                 <div class="mt-5">
                     <h3 class="mb-4 text-primary">Suit</h3>
                     <div class="mb-4">
@@ -49,7 +49,7 @@
                 @if ($result2 == 1 || $result3 == 1 || $result4 == 1 || $result5 == 1 || $result6 == 1 || $result7 == 1
                 ||
                 $result8 == 1)
-                <img class="" src="{{ Storage::url('/media/' . 'Habitación Doble1.jpg') }}" width="800" height="auto">
+                <img class="" src="{{ Storage::url('/media/habitaciónDoble1.jpg') }}" width="800" height="auto">
                 <div class="mt-5">
                     <h3 class="mb-4 text-primary">Habitación Doble</h3>
                     <div class="mb-4">
