@@ -206,7 +206,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row g-0">
                 <div class="col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12">
                     <img src="{{ Storage::url('/media/escalera.jpg') }}" class="img-fluid cover" alt="habitación doble">
                 </div>
@@ -268,7 +268,7 @@
             </div>
         </section>
         <section class="load-hidden">
-            <div class="row" style="margin-top: 5vh;">
+            <div class="row g-0" style="margin-top: 5vh;">
                 <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <div class="d-flex justify-content-center">
                         <div class="d-inline-block text-primary">

@@ -30,7 +30,7 @@ Route::get('/verificateemail/{code}', [UserController::class, 'verifiedEmail']);
 Route::get('/login', [UserController::class, 'showLogin']);
 Route::get('/logout', [UserController::class, 'logout']);
 Route::get('/formuserdata', [UserController::class, 'showFormUserData']);
-Route::get('/showRoom/calculatePrice/{guests}/{idRoom}/{startDate}/{endDate}', [ReservationController::class, 'calculatePrice']);
+Route::get('/showRoom/calculatePrice/{board}/{guests}/{idRoom}/{startDate}/{endDate}', [ReservationController::class, 'calculatePrice']);
 Route::get('/showRoom/{idRoom}/{startDate}/{endDate}/', [RoomController::class, 'showRoom']);
 
 

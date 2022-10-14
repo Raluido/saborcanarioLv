@@ -44,10 +44,12 @@ class ReservationController extends Controller
         }
     }
 
-    public function calculatePrice($idRoom, $guests, $startDate, $endDate)
+    public function calculatePrice($board, $guests, $idRoom, $startDate, $endDate)
 
     {
 
+        log::info($board);
+        
         $days = $this->dateDifference($startDate, $endDate, '%a');
 
         $startDate_arr = explode("-", $startDate);
@@ -55,10 +57,10 @@ class ReservationController extends Controller
         $date = date("y-m-d", strtotime($startDate_arr[0] . "/" . $startDate_arr[1] . "/" . $startDate_arr[2]));
         $range1 = date("y-m-d", strtotime("01/02/2022"));
         $range2 = date("y-m-d", strtotime("30/04/2022"));
-        $range3 = date("y-m-d", strtotime("01/10/2021"));
-        $range4 = date("y-m-d", strtotime("31/01/2022"));
-        $range5 = date("y-m-d", strtotime("01/06/2021"));
-        $range6 = date("y-m-d", strtotime("30/09/2021"));
+        $range3 = date("y-m-d", strtotime("01/10/2022"));
+        $range4 = date("y-m-d", strtotime("31/01/2023"));
+        $range5 = date("y-m-d", strtotime("01/06/2022"));
+        $range6 = date("y-m-d", strtotime("30/09/2022"));
 
         $prices = [];
 
@@ -98,11 +100,17 @@ class ReservationController extends Controller
             $mult = 2.3;
         }
 
-        $total_amount = $mult * $sum;
-        $format = number_format($total_amount,2);
+        if ($board == 'HB') {
+           $board = 1;
+        } else {
+            $board = 1.1;
+        }
+
+        $total_amount = $mult * $sum * $board;
+
+        $format = number_format($total_amount, 2);
 
         return $format;
-
     }
 
     public function generateReservationCode()
