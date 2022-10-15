@@ -25,7 +25,7 @@
             </div>
         </form>
         <div class="mt-4 pb-5">
-            <a class="" href="{{ url('/showgoogleform') }}" target="_blank">Registrarse con google</a><br>
+            <a class="" href="{{ url('/showgoogleform') }}">Registrarse con google</a><br>
         </div>
     </div>
 </div>

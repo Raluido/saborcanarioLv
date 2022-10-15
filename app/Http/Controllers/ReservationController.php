@@ -15,7 +15,6 @@ class ReservationController extends Controller
 {
     public function reserve(Request $request)
     {
-
         try {
             $charge_data = PaymentController::stripePay($request->input('total_amount'), $request->input('stripeToken'));
             $reservation = new Reservation;
@@ -47,9 +46,6 @@ class ReservationController extends Controller
     public function calculatePrice($board, $guests, $idRoom, $startDate, $endDate)
 
     {
-
-        log::info($board);
-        
         $days = $this->dateDifference($startDate, $endDate, '%a');
 
         $startDate_arr = explode("-", $startDate);
@@ -101,7 +97,7 @@ class ReservationController extends Controller
         }
 
         if ($board == 'HB') {
-           $board = 1;
+            $board = 1;
         } else {
             $board = 1.1;
         }
@@ -150,14 +146,4 @@ class ReservationController extends Controller
 
         return $interval->format($differenceFormat);
     }
-
-    // private function insertIcal(){
-    //     Event::create()
-    //     ->name('Laracon Online')
-    //     ->description('Experience Laracon all around the world')
-    //     ->uniqueIdentifier('A unique identifier can be set here')
-    //     ->createdAt(new DateTime('6 march 2019'))
-    //     ->startsAt(new DateTime('6 march 2019 15:00'))
-    //     ->endsAt(new DateTime('6 march 2019 16:00'));
-    // }
 }

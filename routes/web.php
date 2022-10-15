@@ -40,7 +40,7 @@ Route::post('/login', [UserController::class, 'login']);
 Route::post('/formuserdata', [UserController::class, 'setFormUserData']);
 Route::post('/registergoogle', [SocialLoginController::class, 'registerGoogle']);
 Route::post('/room', [RoomController::class, 'showAvailability']);
-Route::post('/showRoom/{idRoom}', [ReservationController::class, 'reserve']);
+Route::post('/showRoom/stripe', [ReservationController::class, 'reserve']);
 
 
 

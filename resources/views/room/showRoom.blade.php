@@ -61,7 +61,7 @@
                     <p>Día de salida: {{ $endDate }}, hasta las 12:00 pm</p>
                 </div>
 
-                <form method="POST" action="/calculatePrice/{board}/{guests}/{idRoom}/{startDate}/{endDate}" id="payment-form">
+                <form method="POST" action="/showRoom/stripe" id="payment-form">
                     <input name="_token" type="hidden" value="{{ csrf_token() }}">
                     <input name="idroom" id="idroom" value="{{ $room->idRoom }}" type="hidden" />
                     <input name="startDate" id="startDate" value="{{ $startDate }}" type="hidden" />
@@ -169,7 +169,7 @@
                 <p>Día de salida: {{ $endDate }}, hasta las 12:00 pm</p>
             </div>
 
-            <form method="POST" action="/calculatePrice/{board}/{guests}/{idRoom}/{startDate}/{endDate}" id="payment-form">
+            <form method="POST" action="/showRoom/stripe" id="payment-form">
                 <input name="_token" type="hidden" value="{{ csrf_token() }}">
                 <input name="idroom" id="idroom" value="{{ $room->idRoom }}" type="hidden" />
                 <input name="startDate" id="startDate" value="{{ $startDate }}" type="hidden" />
