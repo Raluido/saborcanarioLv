@@ -22,7 +22,7 @@ class CreateInvoicesTable extends Migration
             $table->char("invoice_cancelled")->default(0);
             $table->float("invoice_discount", 2, 2);
             $table->float("invoice_tax", 2, 2);
-            $table->float("invoice_total", 2, 2);
+            $table->float("invoice_total", 6, 2);
             $table->timestamps();
         });
     }

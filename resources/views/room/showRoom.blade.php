@@ -66,10 +66,25 @@
                     <input name="idroom" id="idroom" value="{{ $room->idRoom }}" type="hidden" />
                     <input name="startDate" id="startDate" value="{{ $startDate }}" type="hidden" />
                     <input name="endDate" id="endDate" value="{{ $endDate }}" type="hidden" />
-
                     <div class="mb-2">
-                        <br><label for="guests">Número de Huéspedes</label>
+                        <br><label for="guests">Número de Adultos</label>
                         <select name="guests" id="guests">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select><br><br>
+                    </div>
+                    <div class="mb-2">
+                        <br><label for="guestsChildren">Número de Niños</label>
+                        <select name="guestsChildren" id="guestsChildren">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select><br><br>
+                    </div>
+                    <div class="mb-2">
+                        <br><label for="guestsBabies">Número de Bebés</label>
+                        <select name="guestsBabies" id="guestsBabies">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -85,17 +100,22 @@
                     <div class="mb-2">
                         <textarea class="form-control" name="comment" id="comment" rows="3">Comentarios...</textarea><br><br>
                     </div>
-                    <div class="d-flex mt-4">
+                    <div class="mt-4 w-25">
+                        <div class="mb-2">
+                            <input class="form-control" name="tax" id="tax">Impuestos</input>
+                        </div>
+                        <div class="mb-2">
+                            <input class="form-control" name="discount" id="discount">Código de descuento</input>
+                        </div>
                         <div class="me-4">
                             <button id="button1" type="button">Calcular total</button><br><br>
                         </div>
                         <div class="">
-                            <input type="text" id="total_amount" name="total_amount" label="total_amount" size="10" /><br><br>
+                            <input class="form-control" type="text" id="total_amount" name="total_amount" label="total_amount">Total</><br><br>
                         </div>
                     </div>
                     <div class="">
                         <button onclick="showPay()">Reservar</button>
-
                     </div>
                     <div id="show-pay" style="display: none">
                         <div class="form-row2">
@@ -175,8 +195,24 @@
                 <input name="startDate" id="startDate" value="{{ $startDate }}" type="hidden" />
                 <input name="endDate" id="endDate" value="{{ $endDate }}" type="hidden" />
                 <div class="mb-2">
-                    <br><label for="guests">Número de Huéspedes</label>
+                    <br><label for="guests">Número de Adultos</label>
                     <select name="guests" id="guests">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select><br><br>
+                </div>
+                <div class="mb-2">
+                    <br><label for="guestsChildren">Número de Niños</label>
+                    <select name="guestsChildren" id="guestsChildren">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select><br><br>
+                </div>
+                <div class="mb-2">
+                    <br><label for="guestsBabies">Número de Bebés</label>
+                    <select name="guestsBabies" id="guestsBabies">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -192,17 +228,22 @@
                 <div class="mb-2">
                     <textarea class="form-control" name="comment" id="comment" rows="3">Comentarios...</textarea><br><br>
                 </div>
-                <div class="d-flex mt-4">
+                <div class="mt-4 w-25">
+                    <div class="mb-2">
+                        <input class="form-control" name="tax" id="tax">Impuestos</input>
+                    </div>
+                    <div class="mb-2">
+                        <input class="form-control" name="discount" id="discount">Código de descuento</input>
+                    </div>
                     <div class="me-4">
                         <button id="button1" type="button">Calcular total</button><br><br>
                     </div>
                     <div class="">
-                        <input type="text" id="total_amount" name="total_amount" label="total_amount" size="10" /><br><br>
+                        <input class="form-control" type="text" id="total_amount" name="total_amount" label="total_amount">Total</><br><br>
                     </div>
                 </div>
                 <div class="">
                     <button onclick="showPay()">Reservar</button>
-
                 </div>
                 <div id="show-pay" style="display: none">
                     <div class="form-row2">

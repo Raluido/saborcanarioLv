@@ -16,12 +16,16 @@ class ReservationController extends Controller
     public function reserve(Request $request)
     {
         try {
-            $charge_data = PaymentController::stripePay($request->input('total_amount'), $request->input('stripeToken'));
+            $charge_data = PaymentController::stripePay($request->input('total_amount'), "tok_visa");
             $reservation = new Reservation;
             $reservation->idUser = Auth::user()->idUser;
             $reservation->reservation_number = $this->generateReservationCode();
             $reservation->idRoom = $request->input('idroom');
             $reservation->reservation_guests_adults = $request->input('guests');
+            $reservation->reservation_guests_children = $request->input('guestsChildren');
+            $reservation->reservation_guests_babies = $request->input('guestsBabies');
+            $reservation->reservation_tax = $request->input('tax');
+            $reservation->reservation_discount = '0';
             $reservation->reservation_board = $request->input('board');
             $reservation->reservation_checking = $request->input('startDate');
             $reservation->reservation_checkout = $request->input('endDate');
@@ -35,6 +39,8 @@ class ReservationController extends Controller
             $invoice->invoice_number = $charge_data['id'];
             $invoice->reservation_number = $this->generateReservationCode();
             $invoice->invoice_date = Carbon::now();
+            $invoice->invoice_discount = '0';
+            $invoice->invoice_tax = $request->input('tax');
             $invoice->invoice_total = $reservation->reservation_total;
             $invoice->save();
 
