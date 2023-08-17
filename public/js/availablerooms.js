@@ -18,11 +18,13 @@ $(document).ready(function () {
         },
     });
     $('input[name="daterange"]').on(
-        "apply.daterangepicker",
+        "change.daterangepicker",
         function (ev, picker) {
+
             startDate = $('input[name="daterange"]').data(
                 "daterangepicker"
             ).startDate;
+
             var d = new Date(startDate),
                 month = "" + (d.getMonth() + 1),
                 day = "" + d.getDate(),
@@ -33,6 +35,7 @@ $(document).ready(function () {
             endDate = $('input[name="daterange"]').data(
                 "daterangepicker"
             ).endDate;
+
             var d = new Date(endDate),
                 month = "" + (d.getMonth() + 1),
                 day = "" + d.getDate(),
