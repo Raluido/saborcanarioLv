@@ -9,7 +9,7 @@
             <h2>Habitaciones disponibles</h2>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="availableRooms px-5 my-5">
             @if($result1 == 1 && $totalDoubleRooms == 0)
             <p>Tenemos 1 suit disponible desde {{ $startDateFix }} hasta {{ $endDateFix }}</p>
@@ -24,11 +24,13 @@
             <p>Tenemos nuestra suit y {{ $totalDoubleRooms }} habitaciones dobles disponibles desde {{ $startDateFix }} hasta {{ $endDateFix }}</p>
             @endif
         </div>
-        <div class="d-flex justify-content-center">
+        <div class="">
             <div class="my-5 room">
                 @if ($result1 == 1)
-                <img class="" src="{{ Storage::url('/media/suit1.jpg') }}" width="800" height="auto">
-                <div class="mt-5">
+                <div class="imgRoom">
+                    <img class="" src="{{ Storage::url('/media/suit1.jpg') }}">
+                </div>
+                <div class="mt-5 infoRoom">
                     <h3 class="mb-4 text-primary">Suit</h3>
                     <div class="mb-4">
                         <p class="">Amplia habitación con vistas a la calle</p>
@@ -49,8 +51,10 @@
                 @if ($result2 == 1 || $result3 == 1 || $result4 == 1 || $result5 == 1 || $result6 == 1 || $result7 == 1
                 ||
                 $result8 == 1)
-                <img class="" src="{{ Storage::url('/media/habitaciónDoble1.jpg') }}" width="800" height="auto">
-                <div class="mt-5">
+                <div class="imgRoom">
+                    <img class="" src="{{ Storage::url('/media/habitaciónDoble1.jpg') }}">
+                </div>
+                <div class="mt-5 infoRoom">
                     <h3 class="mb-4 text-primary">Habitación Doble</h3>
                     <div class="mb-4">
                         <p class="">Habitación con vistas al patio interior</p>
