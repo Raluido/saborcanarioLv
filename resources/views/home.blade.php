@@ -2,10 +2,8 @@
 @section('mainDiv')
 
 <body>
-    <div class="container-fluid main-bg p-0">
-        @endsection
-        @section('content')
-        <div class="text-center text-white mt-5 mainTitle">
+    <div class="container-fluid main-bg pt-5 px-0">
+        <div class="text-center text-white mainTitle">
             <h1>HOTEL RURAL OROTAVA</h1>
             <div class="stars text-center">
             </div>

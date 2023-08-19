@@ -19,38 +19,37 @@
 </head>
 
 <body>
-    @yield('mainDiv')
     <header>
         <nav class="navbar navbar-expand-lg py-0">
-            <div class="container-fluid">
-                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="container-fluid dropDownMenu">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-around align-items-center" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <button class="buttonLanguage" onclick="toggleLanguage('Español')"><a class="text-decoration-none text-white" href="#">Español</a></button>
+                            <button class="buttonLanguage" onclick="toggleLanguage('Español')"><a class="text-decoration-none text-secondary" href="#">Español</a></button>
                         </li>
                         <li class="nav-item">
-                            <button class="buttonLanguage" onclick="toggleLanguage('English')"><a class="text-decoration-none text-white" href="#">English</a></button>
+                            <button class="buttonLanguage" onclick="toggleLanguage('English')"><a class="text-decoration-none text-secondary" href="#">English</a></button>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item me-3">
-                            <a class="text-decoration-none text-white" id="transContact" href="mailto:info@hotelruralorotava.es"><i class="far fa-envelope-open me-1"></i>Contacta</a>
+                            <a class="text-decoration-none text-secondary" id="transContact" href="mailto:info@hotelruralorotava.es"><i class="far fa-envelope-open me-1"></i>Contacta</a>
                         </li>
                         <li class="nav-item me-3">
-                            <a class="text-decoration-none text-white" id="transFind" href="https://goo.gl/maps/i3DLVeCKVow1m9SN9" target="_blank"><i class="far fa-map me-1"></i>Como
+                            <a class="text-decoration-none text-secondary" id="transFind" href="https://goo.gl/maps/i3DLVeCKVow1m9SN9" target="_blank"><i class="far fa-map me-1"></i>Como
                                 encontrarnos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="text-decoration-none text-white" id="transPhone" href="tel:+34922322793"><i class="fas fa-mobile-alt me-1"></i>Teléfono</a>
+                            <a class="text-decoration-none text-secondary" id="transPhone" href="tel:+34922322793"><i class="fas fa-mobile-alt me-1"></i>Teléfono</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
                         @if (Auth::user())
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hola {{ Auth::user()->email }}
+                            <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hola {{ Auth::user()->email }}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li>
@@ -65,10 +64,10 @@
                         </li>
                         @elseif (!Auth::user())
                         <li>
-                            <a class="nav-link text-white" href="{{ url('/login') }}">{{ Lang::get('login.login') }}</a>
+                            <a class="nav-link text-secondary" href="{{ url('/login') }}">{{ Lang::get('login.login') }}</a>
                         </li>
                         <li>
-                            <a class="nav-link text-white" href="{{ url('/register') }}">{{ Lang::get('login.register') }}</a>
+                            <a class="nav-link text-secondary" href="{{ url('/register') }}">{{ Lang::get('login.register') }}</a>
                         </li>
                         @endif
                     </ul>
@@ -91,7 +90,7 @@
             </div>
         </div>
     </header>
-    @yield('content')
+    @yield('mainDiv')
     <footer class="mt-5">
         <div class="container-fluid mb-5">
             <div class="row">

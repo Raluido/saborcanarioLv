@@ -2,9 +2,7 @@
 @section('mainDiv')
 
 <body>
-    <div class="container-fluid third-bg p-0">
-        @endsection
-        @section('content')
+    <div class="container-fluid third-bg px-0 pt-5">
         <div class="roomChoose w-100 text-center text-white">
             <h2>Realizar reserva</h2>
         </div>
@@ -28,8 +26,8 @@
                         <input type="radio" name="slides" checked="checked" id="slides_1" />
                         <input type="radio" name="slides" id="slides_2" />
                         <ul class="obgaleria" id="galeria1">
-                            <li><img class="galleryImg" src="{{ Storage::url('media/suit1.jpg') }}"></li>
-                            <li><img class="galleryImg" src="{{ Storage::url('media/suit2.jpg') }}"></li>
+                            <li class="galleryImg"><img src="{{ Storage::url('media/suit1.jpg') }}"></li>
+                            <li class="galleryImg"><img src="{{ Storage::url('media/suit2.jpg') }}"></li>
                         </ul>
                         <div class="arrows">
                             <label for="slides_1"></label>

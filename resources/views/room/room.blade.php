@@ -2,10 +2,8 @@
 @section('mainDiv')
 
 <body>
-    <div class="container-fluid second-bg p-0">
-        @endsection
-        @section('content')
-        <div class="w-100 mt-2 text-center text-white availableTitle">
+    <div class="container-fluid second-bg px-0 pt-5">
+        <div class="w-100 text-center text-white availableTitle">
             <h2>Habitaciones disponibles</h2>
         </div>
     </div>
@@ -92,5 +90,5 @@
         </div>
 
     </div>
-    @endsection
 </body>
+@endsection
