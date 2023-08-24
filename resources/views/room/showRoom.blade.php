@@ -25,20 +25,24 @@
                     <div class="csslider infinity" id="slider1">
                         <input type="radio" name="slides" checked="checked" id="slides_1" />
                         <input type="radio" name="slides" id="slides_2" />
+                        <input type="radio" name="slides" id="slides_3" />
                         <ul class="obgaleria" id="galeria1">
+                            <li class="galleryImg"><img src="{{ Storage::url('media/suit1.jpg') }}"></li>
                             <li class="galleryImg"><img src="{{ Storage::url('media/suit1.jpg') }}"></li>
                             <li class="galleryImg"><img src="{{ Storage::url('media/suit2.jpg') }}"></li>
                         </ul>
                         <div class="arrows">
                             <label for="slides_1"></label>
                             <label for="slides_2"></label>
+                            <label for="slides_3"></label>
                             <label class="goto-first" for="slides_1"></label>
-                            <label class="goto-last" for="slides_2"></label>
+                            <label class="goto-last" for="slides_3"></label>
                         </div>
                         <div class="navigation d-none d-lg-block mt-3">
                             <div>
                                 <label for="slides_1"><img width="90vw" height="90vh" src="{{ Storage::url('media/suit1.jpg') }}" /></label>
-                                <label for="slides_2"><img width="90vw" height="90vh" src="{{ Storage::url('media/suit2.jpg') }}" /></label>
+                                <label for="slides_2"><img width="90vw" height="90vh" src="{{ Storage::url('media/suit1.jpg') }}" /></label>
+                                <label for="slides_3"><img width="90vw" height="90vh" src="{{ Storage::url('media/suit2.jpg') }}" /></label>
                             </div>
                         </div>
                     </div>
