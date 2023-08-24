@@ -261,9 +261,9 @@ h2 {
     margin-bottom: 22px;
 }
 
-.csslider>input {
+/* .csslider>input {
     display: none;
-}
+} */
 
 .csslider>input:nth-of-type(5):checked~ul li:first-of-type {
     margin-left: -400%;

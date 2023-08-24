@@ -177,7 +177,7 @@
             });
         }
     </script>
-    <!-- <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script> -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery-ui.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/carousel.js') }}"></script>
