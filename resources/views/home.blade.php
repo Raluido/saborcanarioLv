@@ -3,12 +3,12 @@
 
 <body>
     <div class="container-fluid main-bg pt-5 px-0">
-        <div class="text-center text-white mainTitle">
+        <div class="text-center text-white mainTitle mt-lg-5">
             <h1>HOTEL RURAL OROTAVA</h1>
             <div class="stars text-center">
             </div>
         </div>
-        <div class="container">
+        <div class="container checkDatesForm">
             <form method="POST" action="/room">
                 <div class="d-flex justify-content-center mt-5 fs-4">
                     <div class="row w-75">

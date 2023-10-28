@@ -74,7 +74,7 @@
                 </div>
             </div>
         </nav>
-        <div class="d-none d-xl-flex d-lg-flex d-md-none d-sm-none justify-content-sm-around justify-content-md-around justify-content-lg-around">
+        <div class="d-none d-xl-flex d-lg-flex d-md-none d-sm-none justify-content-sm-around justify-content-md-around justify-content-lg-around mt-lg-5">
             <div class="">
                 <a href="{{ url('/') }}"><img src="{{ Storage::url('/media/logotransp.jpg') }}" width="160" height="160"></a>
             </div>
