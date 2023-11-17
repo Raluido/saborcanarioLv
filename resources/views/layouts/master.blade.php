@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{{ asset('/css/daterangepicker.css') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link href="{{ asset('css/carousel.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -155,39 +154,37 @@
                 CSS y JS.</p>
         </div>
     </footer>
-    <script type="text/javascript" src="{{ asset('/js/moment.min.js') }}"></script>
-    <script>
-        function onSuccess(googleUser) {
-            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-        }
-
-        function onFailure(error) {
-            console.log(error);
-        }
-
-        function renderButton() {
-            gapi.signin2.render('my-signin2', {
-                'scope': 'profile email',
-                'width': 240,
-                'height': 50,
-                'longtitle': true,
-                'theme': 'dark',
-                'onsuccess': onSuccess,
-                'onfailure': onFailure
-            });
-        }
-    </script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/jquery-ui.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('/js/carousel.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('/js/daterangepicker.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('/js/availablerooms.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('/js/ajax.js') }}"></script>
-    <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
-    <script type="text/javascript" src="{{ asset('/js/stripe2.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('/js/showPay.js') }}"></script>
-    @yield('js')
 </body>
+<script type="text/javascript" src="{{ asset('/js/moment.min.js') }}"></script>
+<script>
+    function onSuccess(googleUser) {
+        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+
+    function onFailure(error) {
+        console.log(error);
+    }
+
+    function renderButton() {
+        gapi.signin2.render('my-signin2', {
+            'scope': 'profile email',
+            'width': 240,
+            'height': 50,
+            'longtitle': true,
+            'theme': 'dark',
+            'onsuccess': onSuccess,
+            'onfailure': onFailure
+        });
+    }
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/jquery-ui.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/js/carousel.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/js/ajax.js') }}"></script>
+<script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript" src="{{ asset('/js/stripe2.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/js/showPay.js') }}"></script>
+@yield('js')
 
 </html>

@@ -1,15 +1,24 @@
-$(document).ready(function () {
-    var today = new Date();
-    var day =
+// const { start } = require("@popperjs/core");
+
+$(window).on("load", function () {
+    let today = new Date();
+    let day =
+        today.getFullYear() +
+        "/" +
+        (today.getMonth()) +
+        "/" +
+        today.getDate() + 1;
+    let tomorrow =
         today.getFullYear() +
         "/" +
         (today.getMonth() + 1) +
         "/" +
-        today.getDate();
+        today.getDate() + 1;
     $('input[name="daterange"]').daterangepicker({
         opens: "left",
         drops: "left",
-        minDate: day,
+        startDate: moment().add(1, 'day'),
+        minDate: moment(),
         maxSpan: {
             days: 15,
         },
@@ -44,8 +53,7 @@ $(document).ready(function () {
             document.getElementById("end_Date").value = end_Date_fix;
         }
     );
-
-    startDate = document.getElementById("start_Date");
-    endDate = document.getElementById("end_Date");
-
+    daterange = document.getElementById("daterange").value;
+    document.getElementById("start_Date").value = daterange.split(' - ')[0];
+    document.getElementById("end_Date").value = daterange.split(' - ')[1];
 });

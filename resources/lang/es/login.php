@@ -2,7 +2,7 @@
 
 return [
 
-    'register' => 'Registrarse',
+    'register' => 'Registrarte',
     'email' => 'Email',
     'password' => 'Contraseña',
     'send' => 'Enviar',

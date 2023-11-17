@@ -347,5 +347,7 @@
 </body>
 @endsection
 @section('js')
+<script type="text/javascript" src="{{ asset('/js/daterangepicker.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/js/availablerooms.js') }}"></script>
 <script type="text/javascript" src="{{ asset('/js/showMore2.js') }}"></script>
 @endsection

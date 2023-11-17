@@ -482,15 +482,3 @@ h2 {
 /* end gallery */
 
 /*fin del tercer blade*/
-
-/*blade login*/
-
-.loginBlade {
-    width: 40vh;
-    height: 50vh;
-    border: 1px solid grey;
-}
-
-.loginBlade {
-    font-size: 1.2rem;
-}

@@ -25,7 +25,7 @@
             </div>
         </form>
         <div class="mt-4 pb-5">
-            <a href="{{ url('/showgoogleform') }}">Loguearse con google</a><br>
+            <a class="text-decoration-none" href="{{ url('/showgoogleform') }}">Loguearse con google</a><br>
         </div>
     </div>
 </div>

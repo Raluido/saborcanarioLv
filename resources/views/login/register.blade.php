@@ -24,8 +24,8 @@
                 <button class="btn btn-primary btn-lg">{{ Lang::get('login.send') }}</button><br>
             </div>
         </form>
-        <div class="mt-4 pb-5">
-            <a class="" href="{{ url('/showgoogleform') }}">Registrarse con google</a><br>
+        <div class="my-4">
+            <a class="text-decoration-none" href="{{ url('/showgoogleform') }}">Registrarse con google</a><br>
         </div>
     </div>
 </div>

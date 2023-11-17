@@ -134,7 +134,7 @@
                     </div>
                 </form>
                 @else
-                <a href="{{ url('/register') }}">{{ Lang::get('login.register') }}</a>
+                <a class="text-decoration-none text-secondary" href="{{ url('/register') }}"><i class="fa-solid fa-arrow-right"></i>&nbsp; Necesitas <span class="fw-bold">{{ Lang::get('login.register') }}</span> para realizar el pago</a>
                 @endif
             </div>
         </div>
