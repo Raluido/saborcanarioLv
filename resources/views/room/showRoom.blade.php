@@ -273,6 +273,3 @@
     </div>
 </body>
 @endsection
-@section('js')
-<script type="text/javascript" src="{{ asset('js/ajaxRoomDates.js') }}" defer></script>
-@endsection
