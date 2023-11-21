@@ -46,18 +46,22 @@ class NewUserNotification extends Mailable
         $mailer->mailer_intents = 0;
         $mailer->save();
 
-        return $this->from("raluido@gmail.com")->subject('Bienvenido a SaborCanario')->view('emails.newUser')->with('verified_key', $config->config_value);
+        return $this->from("test@websiwebs.es")
+            ->subject('Bienvenido a SaborCanario')
+            ->view('emails.newUser')
+            ->with('verified_key', $config->config_value);
     }
 
-    public function getVerificationKey(){
+    public function getVerificationKey()
+    {
         $noFound = true;
         $seed = str_split('ABCDEFGHJKLMNPQRSTUVWXYZABCDEFGHJKLMNPQRSTUVWXYZ');
         shuffle($seed);
-        while($noFound){
+        while ($noFound) {
             $rand = '';
             foreach (array_rand($seed, 32) as $k) $rand .= $seed[$k];
             $config = Config::where('config_value', $rand)->get();
-            if($config->isEmpty()){
+            if ($config->isEmpty()) {
                 $noFound = false;
             }
         }
