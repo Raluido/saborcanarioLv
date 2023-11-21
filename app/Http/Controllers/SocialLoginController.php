@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Log;
 
 class SocialLoginController extends Controller
 {
-    public function registerGoogle()
+    public function registerGoogle(Request $request)
     {
-        $socialUser = Socialite::driver('google')->user();
+        $socialUser = Socialite::driver('google')->stateless()->user();
 
         session(['socialUser' => $socialUser]);
 
@@ -43,13 +43,29 @@ class SocialLoginController extends Controller
         } else {
             Auth::login($userExists);
         }
-        return redirect()
-            ->intended();
+
+        $state = $request->input('state');
+        parse_str($state, $result);
+
+        if (isset($result['param'])) {
+            return redirect('/' . $result['param']);
+        } else {
+            return redirect('/');
+        }
     }
 
-    public function showGoogleForm()
+    public function showGoogleForm(Request $request)
     {
-        return Socialite::driver('google')->redirect();
+        if (!$request->idRoom == null) {
+            return Socialite::driver('google')
+                ->with([
+                    'state' => 'param=showRoom/' . $request->idRoom . '/' . $request->startDate . '/' . $request->endDate,
+                ])
+                ->redirect();
+        } else {
+            return Socialite::driver('google')
+                ->redirect();
+        }
     }
 
     public function generateUserCode()

@@ -66,7 +66,7 @@
                             <a class="nav-link text-secondary" href="{{ url('/login') }}">{{ Lang::get('login.login') }}</a>
                         </li>
                         <li>
-                            <a class="nav-link text-secondary" href="{{ url('/register') }}">{{ Lang::get('login.register') }}</a>
+                            <a class="nav-link text-secondary" href="{{ url('/showRegister') }}">{{ Lang::get('login.register') }}</a>
                         </li>
                         @endif
                     </ul>

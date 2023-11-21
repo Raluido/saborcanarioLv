@@ -22,8 +22,8 @@ use App\Http\Controllers\SocialLoginController;
 
 // RUTAS GET
 Route::get('/', [GeneralController::class, 'showHome']);
-Route::get('/register', [UserController::class, 'showRegister']);
-Route::get('/showgoogleform', [SocialLoginController::class, 'showGoogleForm']);
+Route::get('/showRegister', [UserController::class, 'showRegister'])->name('user.showRegister');
+Route::get('/showgoogleform', [SocialLoginController::class, 'showGoogleForm'])->name('user.showGoogleForm');
 Route::get('/google/auth', [SocialLoginController::class, 'registerGoogle']);
 Route::get('/testemail', [UserController::class, 'testEmail']);
 Route::get('/verificateemail/{code}', [UserController::class, 'verifiedEmail']);
@@ -33,7 +33,6 @@ Route::get('/formuserdata', [UserController::class, 'showFormUserData']);
 Route::get('/showRoom/calculatePrice/{board}/{guests}/{idRoom}/{startDate}/{endDate}', [ReservationController::class, 'calculatePrice']);
 Route::get('/showRoom/{idRoom}/{startDate}/{endDate}/', [RoomController::class, 'showRoom']);
 
-
 //RUTAS POST
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
@@ -41,7 +40,3 @@ Route::post('/formuserdata', [UserController::class, 'setFormUserData']);
 Route::post('/registergoogle', [SocialLoginController::class, 'registerGoogle']);
 Route::post('/room', [RoomController::class, 'showAvailability']);
 Route::post('/showRoom/stripe', [ReservationController::class, 'reserve']);
-
-
-
-

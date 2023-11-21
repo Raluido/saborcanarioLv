@@ -487,7 +487,6 @@ class RoomController extends Controller
                     }
                 }
             };
-
         };
 
         $doubleRooms = [$result2, $result3, $result4, $result5, $result6, $result7, $result8];
@@ -507,7 +506,7 @@ class RoomController extends Controller
             ->with('totalDoubleRooms', $totalDoubleRooms);
     }
 
-    public function showRoom($idRoom, $startDateFix, $endDateFix)
+    public function showRoom($idRoom, $startDate, $endDate)
     {
         $board = "";
         $guests = 0;
@@ -515,6 +514,7 @@ class RoomController extends Controller
         $total_amount = 0;
         $room = Room::where('idRoom', $idRoom)->first();
         $photos = Photo::where('idRoom', $room->idRoom)->get();
-        return view('room.showRoom')->with('room', $room)->with('photos', $photos)->with('startDate', $startDateFix)->with('endDate', $endDateFix)->with('total_amount', $total_amount)->with('comment', $comment)->with('guests', $guests)->with('board', $board);
+
+        return view('room.showRoom', compact('room', 'photos', 'startDate', 'endDate', 'total_amount', 'comment', 'guests', 'board'));
     }
 }

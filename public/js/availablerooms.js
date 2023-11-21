@@ -18,7 +18,7 @@ $(window).on("load", function () {
         opens: "left",
         drops: "left",
         startDate: moment(),
-        minDate: moment().add(1, 'day'),
+        endDate: moment().add(1, 'day'),
         maxSpan: {
             days: 15,
         },

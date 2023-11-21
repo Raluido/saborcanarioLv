@@ -9,43 +9,48 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Config;
 use App\Mail\NewUserNotification;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
-    public function showRegister(){
-        return view('login.register');
+    public function showRegister(Request $request)
+    {
+        $idRoom = $request->idRoom;
+        $startDate = $request->startDate;
+        $endDate = $request->endDate;
+
+        return view('login.register', compact('idRoom', 'startDate', 'endDate'));
     }
 
-    public function register(Request $request){
-
-
-        if(strlen($request->input('email')) > 30){
+    public function register(Request $request)
+    {
+        if (strlen($request->input('email')) > 30) {
             return $this->returnErrorRegister('email_lenght_exceded');
         }
 
-        if(!filter_var($request->input('email'), FILTER_VALIDATE_EMAIL)){
+        if (!filter_var($request->input('email'), FILTER_VALIDATE_EMAIL)) {
             return $this->returnErrorRegister('error_email_format');
         }
 
         $emailUser = User::where('user_email_canonical', strtolower($request->input('email')))->get();
 
-        if(!$emailUser->isEmpty()){
+        if (!$emailUser->isEmpty()) {
             return $this->returnErrorRegister('email_already_used');
         }
 
-        if(strlen($request->input('password')) < 8 || strlen($request->input('password'))> 20){
+        if (strlen($request->input('password')) < 8 || strlen($request->input('password')) > 20) {
             return $this->returnErrorRegister('error_password_length');
         }
 
-        if(!preg_match("#[0-9]+#", $request->input('password'))){
+        if (!preg_match("#[0-9]+#", $request->input('password'))) {
             return $this->returnErrorRegister('error_password_numbers');
         }
 
-        if(!preg_match("#[A-Z]+#", $request->input('password'))){
-           return $this->returnErrorRegister('error_password_upperCaseLetter');
+        if (!preg_match("#[A-Z]+#", $request->input('password'))) {
+            return $this->returnErrorRegister('error_password_upperCaseLetter');
         }
 
-        if(!preg_match("#[a-z]+#", $request->input('password'))){
+        if (!preg_match("#[a-z]+#", $request->input('password'))) {
             return $this->returnErrorRegister('error_password_lowerCaseLetter');
         }
 
@@ -60,52 +65,51 @@ class UserController extends Controller
         Auth::attempt(['email' => $user->email, 'password' => $request->input('password')]);
 
         return redirect('/');
-
     }
 
-    public function showLogin(){
+    public function showLogin()
+    {
         return view('login.login');
     }
 
-    public function login(Request $request){
+    public function login(Request $request)
+    {
         $email = $request->input('email');
         $password = $request->input('password');
-        if (Auth::attempt(['email' => $email, 'password' => $password]))
-        {
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
             return redirect('/');
-        }
-        else{
+        } else {
             return redirect('/login')->with('error', 'error_credential');
         }
-
     }
 
-    public function logout(){
+    public function logout()
+    {
         Auth::logout();
         return redirect('/');
-        }
+    }
 
-    private function generateUserCode(){
+    private function generateUserCode()
+    {
         $prefix = config("scconfig.prefix");
         $noCode = true;
-        while($noCode){
+        while ($noCode) {
             $number = rand(100, 999);
             $last = $this->getLetters();
-            $code = $prefix.$number.$last;
+            $code = $prefix . $number . $last;
             $user = User::where('user_code', $code)->get();
-            if($user->isEmpty()){
+            if ($user->isEmpty()) {
                 $noCode = false;
-            }
-            else{
+            } else {
 
                 $noCode = true;
             }
         }
         return $code;
-
     }
 
-    public function showFormUserData(){
+    public function showFormUserData()
+    {
         $user = User::find(Auth::user()->idUser);
         $userVisual = new User();
         $userVisual->user_name = $user->user_name;
@@ -121,7 +125,8 @@ class UserController extends Controller
         return view('/login.formUserData')->with('user', $userVisual);
     }
 
-    public function setFormUserData(Request $request){
+    public function setFormUserData(Request $request)
+    {
         $user = User::find(Auth::user()->idUser);
         $user->user_name = $request->input('user_name');
         $user->user_surname = $request->input('user_surname');
@@ -134,18 +139,20 @@ class UserController extends Controller
         $user->user_languages = $request->input('user_languages');
         $user->save();
 
-        return redirect ('/');
+        return redirect('/');
     }
 
-    public function testEmail(){
+    public function testEmail()
+    {
         Mail::to("raluido@gmail.com")->send(new NewUserNotification);
     }
 
-    public function verifiedEmail($code){
+    public function verifiedEmail($code)
+    {
         $config = Config::where('config_value', $code)->first();
-        if($config != null){
+        if ($config != null) {
             $user = User::find($config->idUser);
-            if($user->user_email_verified == 0){
+            if ($user->user_email_verified == 0) {
                 $user->user_email_verified = 1;
                 $user->save();
             }
@@ -153,7 +160,8 @@ class UserController extends Controller
         return view('login.emailVerificated');
     }
 
-    private function getLetters(){
+    private function getLetters()
+    {
         $seed = str_split('ABCDEFGHJKLMNPQRSTUVWXYZ');
         shuffle($seed);
         $rand = '';
@@ -161,7 +169,8 @@ class UserController extends Controller
         return $rand;
     }
 
-    private function returnErrorRegister($error){
+    private function returnErrorRegister($error)
+    {
         return redirect('/register')->with('error', $error);
     }
 }
