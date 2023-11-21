@@ -17,8 +17,8 @@ $(window).on("load", function () {
     $('input[name="daterange"]').daterangepicker({
         opens: "left",
         drops: "left",
-        startDate: moment().add(1, 'day'),
-        minDate: moment(),
+        startDate: moment(),
+        minDate: moment().add(1, 'day'),
         maxSpan: {
             days: 15,
         },
