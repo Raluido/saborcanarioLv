@@ -43,7 +43,8 @@ class SocialLoginController extends Controller
         } else {
             Auth::login($userExists);
         }
-        return redirect('/');
+        return redirect()
+            ->intended();
     }
 
     public function showGoogleForm()
